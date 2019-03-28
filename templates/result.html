@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head><title>要素识别结果</title></head>
+    <body>
+        <h1>要素识别结果</h1>
+        <h2>案由范畴为:</h2>{{type}}
+        <br><h2>识别出的要素及对应内容为:</h2>
+       <table border="1">
+        <tr>
+            <th>要素名称</th>
+            <th>对应内容</th>
+        </tr>
+        {% for r in result %}
+         <tr>
+            <td>{{r['label']}}</td>
+             <td>{{r['content']}}</td>
+        </tr>
+        {% end %}
+    </table>
+        <br><input   type="button"   value="返回"   onclick="window.location.href='../'" >
+        <h2>您输入的案由内容是:</h2><br> {{content}}
+    </body>
+</html>
